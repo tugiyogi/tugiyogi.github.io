@@ -59,17 +59,5 @@
     </section>
     <p class="foot">HedefON tam konum veya GPS bilgisi istemeden, yalnızca kullanıcı tarafından seçilen il/ilçe bilgisini bölgesel fırsatlar için kullanabilir.</p>
   </main>
-  <script>
-    document.getElementById('playButton').addEventListener('click', function (e) {
-      var ua = navigator.userAgent || '';
-      if (/Android/i.test(ua)) {
-        e.preventDefault();
-        var web = 'https://play.google.com/store/apps/details?id=com.hedefon.app';
-        var intent = 'intent://details?id=com.hedefon.app#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=' + encodeURIComponent(web) + ';end';
-        window.location.href = intent;
-        setTimeout(function(){ window.location.href = web; }, 1200);
-      }
-    });
-  </script>
 </body>
 </html>
