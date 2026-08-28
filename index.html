@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101828" />
+  <title>HedefON — Ücretsiz İndir</title>
+  <meta name="description" content="HedefON: 5, 6, 7 ve 8. sınıf öğrencileri için çalışma planı, ilerleme takibi ve LGS rehberliği." />
+  <style>
+    :root{
+      --bg:#f7f9fc; --card:#fff; --ink:#101828; --muted:#667085;
+      --green:#45cf62; --green-dark:#23a943; --yellow:#f4c430; --line:#e4e7ec;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .wrap{width:min(100%,460px)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:30px 24px 24px;box-shadow:0 18px 60px rgba(16,24,40,.08);text-align:center}
+    .logo{width:96px;height:96px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;background:var(--green);color:#fff;font-size:47px;font-weight:900;letter-spacing:-3px;box-shadow:0 12px 30px rgba(69,207,98,.26)}
+    h1{font-size:32px;line-height:1.08;margin:0 0 8px;font-weight:900;letter-spacing:-.8px}
+    .tag{font-size:17px;line-height:1.45;color:var(--muted);margin:0 auto 22px;max-width:360px}
+    .chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+    .chip{background:#f2f4f7;color:#344054;border-radius:999px;padding:8px 11px;font-size:13px;font-weight:700}
+    .cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;width:100%;border-radius:16px;text-decoration:none;background:#101828;color:#fff;font-size:17px;font-weight:850;box-shadow:0 10px 24px rgba(16,24,40,.18)}
+    .play{width:24px;height:24px;border-radius:6px;background:#fff;display:grid;place-items:center;color:#101828;font-size:14px}
+    .free{margin:12px 0 0;font-size:13px;color:var(--green-dark);font-weight:800}
+    .divider{height:1px;background:var(--line);margin:24px 0 18px}
+    .features{text-align:left;display:grid;gap:12px}
+    .feature{display:flex;gap:11px;align-items:flex-start}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--yellow);margin-top:7px;flex:0 0 auto}
+    .feature b{font-size:14px}
+    .feature span{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-top:2px}
+    .foot{font-size:12px;color:#98a2b3;margin:16px 6px 0;line-height:1.45}
+    .fallback{margin-top:12px}.fallback a{font-size:12px;color:#667085}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="logo" aria-label="HedefON">ON</div>
+      <h1>HedefON</h1>
+      <p class="tag">5, 6, 7 ve 8. sınıf öğrencileri için çalışma düzenini kurmaya ve ilerlemeyi takip etmeye yardımcı olan ücretsiz eğitim uygulaması.</p>
+      <div class="chips">
+        <span class="chip">Günlük çalışma planı</span>
+        <span class="chip">Deneme analizleri</span>
+        <span class="chip">LGS rehberliği</span>
+      </div>
+      <a class="cta" id="playButton" href="https://play.google.com/store/apps/details?id=com.hedefon.app" rel="noopener">
+        <span class="play">▶</span><span>Google Play'den ücretsiz indir</span>
+      </a>
+      <p class="free">Android'de yayında • Ücretsiz</p>
+      <div class="divider"></div>
+      <div class="features">
+        <div class="feature"><span class="dot"></span><div><b>Nereden başlayacağını gör</b><span>Çalışma sürecini daha düzenli ve takip edilebilir hale getir.</span></div></div>
+        <div class="feature"><span class="dot"></span><div><b>Gelişimini takip et</b><span>Çalışma ve deneme verilerini tek yerde gör.</span></div></div>
+        <div class="feature"><span class="dot"></span><div><b>Özellikle LGS yolunda yanında</b><span>8. sınıfta hedef ve sınav sürecini daha bilinçli yönet.</span></div></div>
+      </div>
+      <div class="fallback"><a href="https://play.google.com/store/apps/details?id=com.hedefon.app">Buton açılmazsa buraya dokun.</a></div>
+    </section>
+    <p class="foot">HedefON tam konum veya GPS bilgisi istemeden, yalnızca kullanıcı tarafından seçilen il/ilçe bilgisini bölgesel fırsatlar için kullanabilir.</p>
+  </main>
+  <script>
+    document.getElementById('playButton').addEventListener('click', function (e) {
+      var ua = navigator.userAgent || '';
+      if (/Android/i.test(ua)) {
+        e.preventDefault();
+        var web = 'https://play.google.com/store/apps/details?id=com.hedefon.app';
+        var intent = 'intent://details?id=com.hedefon.app#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=' + encodeURIComponent(web) + ';end';
+        window.location.href = intent;
+        setTimeout(function(){ window.location.href = web; }, 1200);
+      }
+    });
+  </script>
+</body>
+</html>
